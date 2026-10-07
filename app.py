@@ -3,6 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3
 from pathlib import Path
 from datetime import datetime
+import os
 
 app = Flask(__name__)
 
@@ -44,7 +45,25 @@ def init_db():
 
 init_db()
 
+def bootstrap_admin():
+    admin_email = os.getenv("ADMIN_EMAIL")
+    bootstrap_secret = os.getenv("ADMIN_BOOTSTRAP_SECRET")
 
+    if not admin_email or not bootstrap_secret:
+        return
+
+    connection = get_db()
+
+    connection.execute(
+        "UPDATE users SET role = 'admin' WHERE email = ?",
+        (admin_email.strip().lower(),)
+    )
+
+    connection.commit()
+    connection.close()
+
+
+bootstrap_admin()
 # ---------------- SIGNUP ----------------
 
 @app.route("/api/signup", methods=["POST"])
@@ -142,7 +161,15 @@ def login():
             "success": False,
             "message": "Invalid email or password."
         }), 401
+    # Temporary admin bootstrap
+    admin_email = os.getenv("ADMIN_EMAIL")
 
+    if admin_email and email == admin_email.strip().lower():
+        connection.execute(
+            "UPDATE users SET role = 'admin' WHERE id = ?",
+            (user["id"],)
+        )
+        connection.commit()
     last_login = datetime.now().isoformat(timespec="seconds")
 
     connection.execute(
@@ -216,6 +243,11 @@ def logout():
         "success": True,
         "message": "Logged out successfully."
     })
+
+
+
+
+
 
 
 # ---------------- ADMIN USERS ----------------
