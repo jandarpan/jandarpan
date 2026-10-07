@@ -47,17 +47,48 @@ init_db()
 
 def bootstrap_admin():
     admin_email = os.getenv("ADMIN_EMAIL")
-    bootstrap_secret = os.getenv("ADMIN_BOOTSTRAP_SECRET")
+    admin_password = os.getenv("ADMIN_PASSWORD")
 
-    if not admin_email or not bootstrap_secret:
+    if not admin_email or not admin_password:
         return
+
+    admin_email = admin_email.strip().lower()
 
     connection = get_db()
 
-    connection.execute(
-        "UPDATE users SET role = 'admin' WHERE email = ?",
-        (admin_email.strip().lower(),)
-    )
+    existing_user = connection.execute(
+        "SELECT id FROM users WHERE email = ?",
+        (admin_email,)
+    ).fetchone()
+
+    password_hash = generate_password_hash(admin_password)
+
+    if existing_user:
+        connection.execute(
+            """
+            UPDATE users
+            SET role = 'admin',
+                password_hash = ?
+            WHERE id = ?
+            """,
+            (password_hash, existing_user["id"])
+        )
+    else:
+        connection.execute(
+            """
+            INSERT INTO users
+            (full_name, email, mobile, password_hash, role, created_at)
+            VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            (
+                "JanDarpan Admin",
+                admin_email,
+                "0000000000",
+                password_hash,
+                "admin",
+                datetime.now().isoformat(timespec="seconds")
+            )
+        )
 
     connection.commit()
     connection.close()
@@ -161,15 +192,6 @@ def login():
             "success": False,
             "message": "Invalid email or password."
         }), 401
-    # Temporary admin bootstrap
-    admin_email = os.getenv("ADMIN_EMAIL")
-
-    if admin_email and email == admin_email.strip().lower():
-        connection.execute(
-            "UPDATE users SET role = 'admin' WHERE id = ?",
-            (user["id"],)
-        )
-        connection.commit()
     last_login = datetime.now().isoformat(timespec="seconds")
 
     connection.execute(
