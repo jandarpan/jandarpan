@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background: #f4fbff;
+}
+
+
+/* MAIN PAGE */
+
+.page {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* LEFT HERO */
+
+.hero {
+    width: 55%;
+    min-height: 100vh;
+    padding: 55px 65px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087fc1,
+            #16b89a
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+.logo {
+    font-size: 34px;
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+.logo-jan {
+    color: white;
+}
+
+.logo-darpan {
+    color: #baff65;
+}
+
+
+.tagline-small {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: #d7f8f3;
+
+    font-weight: bold;
+
+    margin-bottom: 65px;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+
+    max-width: 600px;
+}
+
+
+.badge {
+    display: inline-block;
+
+    padding: 11px 19px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.18);
+
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 {
+    font-size: 50px;
+
+    line-height: 1.1;
+
+    margin-bottom: 35px;
+}
+
+
+.hero h1 span {
+    color: #d9ff63;
+}
+
+
+/* FEATURES */
+
+.feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    margin-bottom: 22px;
+}
+
+
+.icon {
+    width: 52px;
+    height: 52px;
+
+    min-width: 52px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+
+    background: rgba(255,255,255,0.18);
+}
+
+
+.icon.green {
+    background: #35c879;
+}
+
+
+.icon.blue {
+    background: #338fe8;
+}
+
+
+.icon.purple {
+    background: #8247dc;
+}
+
+
+.feature h3 {
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+
+.feature p {
+    font-size: 13px;
+
+    color: #d9f4f5;
+
+    line-height: 1.4;
+}
+
+
+/* ROAD DECORATION */
+
+.road {
+    position: absolute;
+
+    width: 600px;
+    height: 230px;
+
+    right: -120px;
+    bottom: -90px;
+
+    background: #4cae55;
+
+    border-radius: 50%;
+
+    transform: rotate(-8deg);
+}
+
+
+.road::before {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+    height: 500px;
+
+    background: #3d4850;
+
+    left: 170px;
+    top: -100px;
+
+    transform: rotate(15deg);
+
+    border-radius: 50%;
+}
+
+
+.road-line {
+    position: absolute;
+
+    z-index: 2;
+
+    width: 8px;
+    height: 170px;
+
+    background: #ffffff;
+
+    left: 320px;
+    top: -40px;
+
+    border-radius: 10px;
+}
+
+
+/* RIGHT SIGNUP */
+
+.signup-section {
+    width: 45%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 45px;
+
+    background: #f7fcff;
+}
+
+
+.signup-card {
+    width: 100%;
+
+    max-width: 470px;
+
+    padding: 42px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 60px rgba(25,80,120,0.14);
+}
+
+
+/* ICON */
+
+.location-icon {
+    width: 62px;
+    height: 62px;
+
+    border-radius: 18px;
+
+    background: #dff9ed;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 29px;
+
+    margin-bottom: 20px;
+}
+
+
+/* TITLE */
+
+.signup-card h2 {
+    font-size: 32px;
+
+    color: #12345b;
+
+    margin-bottom: 9px;
+}
+
+
+.signup-card h2 span {
+    color: #0aa67e;
+}
+
+
+.subtitle {
+    color: #7891a6;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 27px;
+}
+
+
+/* FORM */
+
+form label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    color: #35536e;
+
+    margin-bottom: 7px;
+}
+
+
+form input {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1.5px solid #d9e6ef;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    margin-bottom: 17px;
+
+    transition: 0.2s;
+}
+
+
+form input:focus {
+    border-color: #16b89a;
+
+    box-shadow:
+        0 0 0 3px rgba(22,184,154,0.10);
+}
+
+
+/* BUTTON */
+
+form button {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #13b77c,
+            #0aa7b5
+        );
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 3px;
+
+    transition: 0.25s;
+}
+
+
+form button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(0,170,150,0.20);
+}
+
+
+/* LOGIN */
+
+.login-text {
+    text-align: center;
+
+    margin-top: 21px;
+
+    color: #7891a6;
+
+    font-size: 14px;
+}
+
+
+.login-text a {
+    color: #079b82;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .page {
+        flex-direction: column;
+    }
+
+
+    .hero {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 35px 25px 50px;
+    }
+
+
+    .tagline-small {
+        margin-bottom: 40px;
+    }
+
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+
+    .feature {
+        margin-bottom: 18px;
+    }
+
+
+    .road {
+        display: none;
+    }
+
+
+    .signup-section {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 30px 20px;
+    }
+
+
+    .signup-card {
+        padding: 30px 22px;
+    }
+
+
+    .signup-card h2 {
+        font-size: 28px;
+    }
+
+}

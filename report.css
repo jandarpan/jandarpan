@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f8fc;
+    color: #1f2937;
+    padding-bottom: 40px;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+}
+
+.logo {
+    text-decoration: none;
+    color: #222;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #16a34a;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.back-btn:hover {
+    color: #16a34a;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.report-page {
+    width: 86%;
+    max-width: 850px;
+    margin: auto;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.report-heading {
+    padding: 40px 0 25px;
+}
+
+.small-title {
+    color: #16a34a;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.report-heading h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.report-heading h1 span {
+    color: #16a34a;
+}
+
+.report-heading > p:last-child {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   REPORT CARD
+========================= */
+
+.report-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group > label {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+.category-options {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.category-option {
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    border-radius: 13px;
+    padding: 14px 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    transition: 0.2s;
+}
+
+.category-option span {
+    display: block;
+    font-size: 23px;
+    margin-bottom: 6px;
+}
+
+.category-option:hover {
+    border-color: #16a34a;
+    transform: translateY(-2px);
+}
+
+.category-option.selected {
+    background: #dcfce7;
+    border-color: #16a34a;
+    color: #15803d;
+}
+
+
+/* =========================
+   PHOTO UPLOAD
+========================= */
+
+.photo-upload {
+    position: relative;
+    min-height: 180px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 16px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.photo-upload:hover {
+    border-color: #16a34a;
+    background: #f0fdf4;
+}
+
+.photo-upload input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-content {
+    pointer-events: none;
+}
+
+.upload-icon {
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.upload-content h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.upload-content p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #dbe1e8;
+    border-radius: 12px;
+    padding: 14px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.08);
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+.location-box {
+    border: 1px solid #dbe1e8;
+    border-radius: 14px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.location-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: #dcfce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.location-details {
+    flex: 1;
+}
+
+.location-details strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.location-details p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.location-button {
+    border: none;
+    background: #f0fdf4;
+    color: #15803d;
+    padding: 10px 13px;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.location-button:hover {
+    background: #dcfce7;
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+.submit-button {
+    width: 100%;
+    border: none;
+    border-radius: 13px;
+    background: #16a34a;
+    color: white;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.submit-button span {
+    margin-left: 8px;
+}
+
+.submit-button:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .topbar {
+        padding: 0 5%;
+    }
+
+    .report-page {
+        width: 90%;
+    }
+
+    .report-heading {
+        padding-top: 30px;
+    }
+
+    .report-heading h1 {
+        font-size: 27px;
+    }
+
+    .report-card {
+        padding: 20px;
+    }
+
+    .category-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-option:last-child {
+        grid-column: span 2;
+    }
+
+    .location-box {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .location-details {
+        min-width: calc(100% - 60px);
+    }
+
+    .location-button {
+        width: 100%;
+    }
+}

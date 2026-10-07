@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AkhilSocial - Profile</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            width: 350px;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        button {
+            width: 95%;
+            padding: 12px;
+            margin-top: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #status {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>🌐 AkhilSocial</h1>
+
+    <h2>Create Your Profile</h2>
+
+    <input
+        type="text"
+        id="username"
+        placeholder="Choose a username"
+    >
+
+    <button onclick="saveProfile()">
+        Save Profile
+    </button>
+
+    <p id="status"></p>
+
+</div>
+
+
+<script type="module">
+
+    import { createClient }
+    from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+
+    const supabaseUrl =
+        "https://dqryedinxrmobrlmuixq.supabase.co";
+
+
+    const supabaseKey =
+        "sb_publishable_S3QMT6BUHAFZmZTatbL6Uw_Rq3EkLgl";
+
+
+    const supabase =
+        createClient(supabaseUrl, supabaseKey);
+
+
+    window.saveProfile = async function () {
+
+        const username =
+            document.getElementById("username").value.trim();
+
+
+        if (!username) {
+
+            document.getElementById("status").innerText =
+                "Username enter karo.";
+
+            return;
+        }
+
+
+        const { data: { user } } =
+            await supabase.auth.getUser();
+
+
+        if (!user) {
+
+            document.getElementById("status").innerText =
+                "Please login first.";
+
+            return;
+        }
+
+
+        const { error } =
+            await supabase
+                .from("profiles")
+                .insert({
+                    id: user.id,
+                    username: username
+                });
+
+
+        if (error) {
+
+            document.getElementById("status").innerText =
+                error.message;
+
+            return;
+        }
+
+
+        document.getElementById("status").innerText =
+            "Profile saved successfully! 🎉";
+
+    };
+
+</script>
+
+</body>
+</html>

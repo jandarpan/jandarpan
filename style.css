@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    color: #172033;
+
+    /* Beautiful background */
+    background:
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.20), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(14, 165, 233, 0.20), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(168, 85, 247, 0.15), transparent 35%),
+        linear-gradient(135deg, #f8faff, #eef4ff);
+}
+
+/* ================= HEADER ================= */
+
+header {
+    position: relative;
+    overflow: hidden;
+
+    padding: 55px 20px;
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(135deg, #312e81, #4f46e5, #2563eb);
+
+    box-shadow: 0 10px 35px rgba(37, 99, 235, 0.25);
+}
+
+/* Decorative circles */
+
+header::before {
+    content: "";
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    top: -100px;
+    left: -60px;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    right: -100px;
+    bottom: -170px;
+}
+
+header h1 {
+    position: relative;
+    z-index: 2;
+
+    font-size: 46px;
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+header p {
+    position: relative;
+    z-index: 2;
+
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* ================= MAIN ================= */
+
+main {
+    max-width: 1100px;
+    margin: 55px auto;
+    padding: 0 25px;
+}
+
+main h2 {
+    text-align: center;
+
+    font-size: 32px;
+    margin-bottom: 35px;
+
+    color: #1e293b;
+}
+
+/* ================= SUBJECT CARDS ================= */
+
+.subjects {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.subject {
+    position: relative;
+    overflow: hidden;
+
+    padding: 38px 25px;
+
+    border-radius: 22px;
+
+    text-decoration: none;
+    text-align: center;
+
+    color: #172033;
+
+    /* Glass effect */
+
+    background: rgba(255, 255, 255, 0.72);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 10px 30px rgba(31, 41, 55, 0.08);
+
+    transition: all 0.3s ease;
+}
+
+/* Small shine */
+
+.subject::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    background: rgba(99, 102, 241, 0.08);
+
+    top: -50px;
+    right: -40px;
+}
+
+.subject:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(37, 99, 235, 0.15);
+}
+
+/* ================= ICON ================= */
+
+.icon {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 75px;
+    height: 75px;
+
+    margin-bottom: 18px;
+
+    border-radius: 20px;
+
+    font-size: 38px;
+
+    background: linear-gradient(
+        135deg,
+        #eef2ff,
+        #e0e7ff
+    );
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.12);
+}
+
+/* ================= TEXT ================= */
+
+.subject h3 {
+    position: relative;
+
+    font-size: 23px;
+
+    margin-bottom: 9px;
+
+    color: #1e293b;
+}
+
+.subject p {
+    position: relative;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    margin-top: 60px;
+
+    color: #64748b;
+
+    border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 45px 20px;
+    }
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    header p {
+        font-size: 15px;
+    }
+
+    main {
+        margin-top: 35px;
+    }
+
+    .subjects {
+        grid-template-columns: 1fr;
+    }
+
+    .subject {
+        padding: 32px 20px;
+    }
+}
+/* ================= CHAPTER PAGE ================= */
+
+.back-button {
+    display: inline-block;
+
+    margin-bottom: 30px;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    color: #4f46e5;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid rgba(99, 102, 241, 0.15);
+
+    transition: 0.2s;
+}
+
+.back-button:hover {
+    background: white;
+    transform: translateX(-3px);
+}
+
+.chapters {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.chapter {
+    display: block;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+
+    color: #172033;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0 8px 25px rgba(31, 41, 55, 0.07);
+
+    transition: 0.25s;
+}
+
+.chapter:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.13);
+}
+
+.chapter span {
+    display: block;
+
+    color: #6366f1;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.chapter strong {
+    font-size: 20px;
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .chapters {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================= PDF CARDS ================= */
+
+.pdfs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.pdf-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+
+    padding: 30px;
+    border-radius: 20px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0 8px 25px rgba(31, 41, 55, 0.08);
+
+    transition: 0.25s;
+}
+
+.pdf-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+.pdf-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.pdf-card h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.pdf-card p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.pdf-button {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #2563eb
+    );
+
+    transition: 0.2s;
+}
+
+.pdf-button:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 650px) {
+
+    .pdfs {
+        grid-template-columns: 1fr;
+    }
+}

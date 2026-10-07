@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f8fc;
+    color: #1f2937;
+}
+
+.topbar {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+}
+
+.logo {
+    text-decoration: none;
+    color: #222;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #16a34a;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.back-btn:hover {
+    color: #16a34a;
+}
+
+.reports-page {
+    width: 86%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.page-heading {
+    padding: 40px 0 25px;
+}
+
+.small-title {
+    color: #16a34a;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.page-heading h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.page-heading h1 span {
+    color: #16a34a;
+}
+
+.page-heading > p:last-child {
+    color: #64748b;
+    font-size: 15px;
+}
+
+
+/* FILTER */
+
+.filter-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 22px;
+}
+
+.filter-card h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.filter-card > p {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.filter-group label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #dbe1e8;
+    border-radius: 10px;
+    background: white;
+    color: #334155;
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+}
+
+.filter-group select:focus {
+    border-color: #16a34a;
+}
+
+
+/* SUMMARY */
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.summary-card > span {
+    width: 42px;
+    height: 42px;
+    background: #f0fdf4;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.summary-card div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.summary-card small {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.summary-card strong {
+    font-size: 21px;
+}
+
+
+/* REPORTS */
+
+.reports-section {
+    padding-bottom: 50px;
+}
+
+.section-heading {
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.reports-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.empty-state {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 55px 25px;
+    text-align: center;
+}
+
+.empty-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #dcfce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.empty-state h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .topbar {
+        padding: 0 5%;
+    }
+
+    .reports-page {
+        width: 90%;
+    }
+
+    .page-heading {
+        padding-top: 30px;
+    }
+
+    .page-heading h1 {
+        font-size: 27px;
+    }
+
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-card {
+        padding: 20px;
+    }
+}

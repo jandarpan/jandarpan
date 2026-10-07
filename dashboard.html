@@ -1,0 +1,315 @@
+\<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - JanDarpan</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+        <div class="logo">
+            <span>Jan</span>Darpan
+        </div>
+
+        <div class="top-actions">
+            <button class="icon-btn">🔔</button>
+            <button class="profile-btn">👤</button>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard">
+
+        <!-- LOCATION -->
+        <section class="location-section">
+
+            <p class="small-title">YOUR AREA</p>
+
+            <h1 id="areaTitle">
+                Daraunda, Siwan
+            </h1>
+
+            <p id="stateTitle">
+                Bihar
+            </p>
+
+        </section>
+
+
+        <!-- REPORT BUTTON -->
+        <section class="report-section">
+
+            <div class="report-text">
+                <p>See something wrong?</p>
+
+                <h2>
+                    Report a Problem
+                </h2>
+
+                <span>
+                    Help improve your local community.
+                </span>
+            </div>
+
+            <a href="report.html" class="report-button">
+                📷 Report Now
+            </a>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+        <section class="categories-section">
+
+            <div class="section-heading">
+                <h2>Report an Issue</h2>
+
+                <p>
+                    Choose the type of problem you want to report.
+                </p>
+            </div>
+
+
+            <div class="categories">
+
+                <a href="report.html?category=road" class="category-card road-card">
+
+                    <div class="category-icon">
+                        🛣️
+                    </div>
+
+                    <div>
+                        <h3>Road</h3>
+                        <p>Damaged roads & potholes</p>
+                    </div>
+
+                    <span class="arrow">→</span>
+
+                </a>
+
+
+                <a href="report.html?category=nala" class="category-card nala-card">
+
+                    <div class="category-icon">
+                        🚧
+                    </div>
+
+                    <div>
+                        <h3>Nala</h3>
+                        <p>Blocked or damaged drains</p>
+                    </div>
+
+                    <span class="arrow">→</span>
+
+                </a>
+
+
+                <a href="report.html?category=hospital" class="category-card hospital-card">
+
+                    <div class="category-icon">
+                        🏥
+                    </div>
+
+                    <div>
+                        <h3>Hospital</h3>
+                        <p>Public hospital problems</p>
+                    </div>
+
+                    <span class="arrow">→</span>
+
+                </a>
+
+
+                <a href="report.html?category=school" class="category-card school-card">
+
+                    <div class="category-icon">
+                        🏫
+                    </div>
+
+                    <div>
+                        <h3>School</h3>
+                        <p>School infrastructure issues</p>
+                    </div>
+
+                    <span class="arrow">→</span>
+
+                </a>
+
+
+                <a href="report.html?category=other" class="category-card other-card">
+
+                    <div class="category-icon">
+                        ➕
+                    </div>
+
+                    <div>
+                        <h3>Other</h3>
+                        <p>Report another problem</p>
+                    </div>
+
+                    <span class="arrow">→</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- AREA OVERVIEW -->
+        <section class="overview-section">
+
+            <div class="section-heading">
+
+                <h2>Area Overview</h2>
+
+                <p>
+                    Current reports from your area.
+                </p>
+
+            </div>
+
+
+            <div class="overview-grid">
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <span>Total Reports</span>
+                        <strong>0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        🔄
+                    </div>
+
+                    <div>
+                        <span>In Progress</span>
+                        <strong>0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        ✅
+                    </div>
+
+                    <div>
+                        <span>Resolved</span>
+                        <strong>0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+                        <span>Unresolved</span>
+                        <strong>0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT REPORTS -->
+        <section class="reports-section">
+
+            <div class="section-heading reports-heading">
+
+                <div>
+                    <h2>Recent Reports</h2>
+
+                    <p>
+                        Latest reports from your area.
+                    </p>
+                </div>
+
+                <button class="view-all" onclick="window.location.href='all-reports.html'">
+    View All →
+</button>
+
+            </div>
+
+
+            <div class="empty-reports">
+
+                <div class="empty-icon">
+                    📍
+                </div>
+
+                <h3>No reports yet</h3>
+
+                <p>
+                    Be the first person to report a problem
+                    in your area.
+                </p>
+
+                <a href="report.html">
+                    Report a Problem
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- BOTTOM NAVIGATION -->
+
+
+ <nav class="bottom-nav">
+
+    <a href="dashboard.html" class="nav-item active">
+        <div class="nav-icon">🌐</div>
+        <span>All Reports</span>
+    </a>
+
+    <a href="all-reports.html" class="nav-item">
+        <div class="nav-icon">📊</div>
+        <span>Area Reports</span>
+    </a>
+
+    <a href="your-reports.html" class="nav-item">
+        <div class="nav-icon">👤</div>
+        <span>Your Reports</span>
+    </a>
+
+</nav>>
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

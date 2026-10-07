@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For riya❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#12000a,#3b0018,#16000d);
+    color:white;
+    overflow:hidden;
+}
+
+.screen{
+    width:100%;
+    height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:25px;
+}
+
+.screen.active{
+    display:flex;
+}
+
+.container{
+    max-width:850px;
+    width:100%;
+}
+
+h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+h2{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:20px;
+    line-height:1.7;
+}
+
+.mainBtn{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#ff2f68;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 0 20px #ff2f68;
+    transition:.3s;
+}
+
+.mainBtn:hover{
+    transform:scale(1.08);
+}
+
+/* INTRO */
+
+.introTitle{
+    font-size:18px;
+    letter-spacing:4px;
+    color:#ff91ad;
+}
+
+.introName{
+    font-size:60px;
+    color:#ff4f7d;
+    text-shadow:0 0 25px #ff174f;
+}
+
+.introInfo{
+    margin-top:20px;
+}
+
+/* GAMES */
+
+.gameTitle{
+    color:#ff7b9d;
+}
+
+.playArea{
+    width:100%;
+    height:400px;
+    position:relative;
+    margin-top:20px;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:25px;
+    background:rgba(255,255,255,.04);
+    overflow:hidden;
+}
+
+/* GAME 1 */
+
+.hiddenHeart{
+    position:absolute;
+    font-size:55px;
+    cursor:pointer;
+    transition:.2s;
+    filter:drop-shadow(0 0 15px #ff174f);
+}
+
+/* GAME 2 */
+
+.boxGrid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+    max-width:700px;
+    margin:30px auto;
+}
+
+.mysteryBox{
+    height:100px;
+    border:none;
+    border-radius:15px;
+    background:linear-gradient(145deg,#ff4775,#9e123b);
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.4);
+    transition:.3s;
+}
+
+.mysteryBox:hover{
+    transform:translateY(-7px) scale(1.03);
+}
+
+/* GAME 3 */
+
+.fallingHeart{
+    position:absolute;
+    font-size:35px;
+    cursor:pointer;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-60px);
+    }
+    to{
+        transform:translateY(470px);
+    }
+}
+
+/* GAME 4 */
+
+.memoryGrid{
+    display:grid;
+    grid-template-columns:repeat(4,100px);
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+}
+
+.memoryCard{
+    height:100px;
+    border-radius:15px;
+    background:#9b1642;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:0;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.memoryCard.flipped,
+.memoryCard.matched{
+    background:#ff4d7d;
+    font-size:42px;
+}
+
+.memoryCard.matched{
+    box-shadow:0 0 20px #ff4d7d;
+}
+
+/* DIL KI BAAT */
+
+.heartTalk{
+    max-width:850px;
+    max-height:85vh;
+    overflow-y:auto;
+    padding:35px;
+    border-radius:25px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,120,150,.25);
+    box-shadow:0 0 35px rgba(255,30,90,.2);
+}
+
+.heartTalk h2{
+    color:#ff668c;
+}
+
+.heartTalk p{
+    text-align:left;
+    font-size:18px;
+}
+
+.highlight{
+    color:#ff7195;
+    font-weight:bold;
+}
+
+/* LOVE MOMENT */
+
+.loveHeart{
+    font-size:100px;
+    animation:heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    25%{transform:scale(1.15)}
+    40%{transform:scale(1)}
+    60%{transform:scale(1.12)}
+}
+
+/* GIFT */
+
+.gift{
+    position:relative;
+    width:180px;
+    height:150px;
+    margin:50px auto;
+    cursor:pointer;
+}
+
+.giftBody{
+    position:absolute;
+    bottom:0;
+    width:180px;
+    height:120px;
+    background:#d71950;
+    border-radius:8px;
+}
+
+.giftBody:before{
+    content:"";
+    position:absolute;
+    left:75px;
+    width:30px;
+    height:120px;
+    background:#ffd166;
+}
+
+.giftLid{
+    position:absolute;
+    top:0;
+    left:-10px;
+    width:200px;
+    height:45px;
+    background:#ff4774;
+    border-radius:8px;
+    z-index:2;
+    transition:1s;
+}
+
+.giftLid:before{
+    content:"";
+    position:absolute;
+    left:85px;
+    width:30px;
+    height:45px;
+    background:#ffd166;
+}
+
+.gift.open .giftLid{
+    transform:translateY(-100px) rotate(-10deg);
+}
+
+/* ROSE */
+
+.rose{
+    position:relative;
+    width:100px;
+    height:250px;
+    margin:30px auto;
+}
+
+.roseFlower{
+    font-size:100px;
+    animation:roseAppear 1.5s ease;
+}
+
+.stem{
+    position:absolute;
+    width:8px;
+    height:130px;
+    background:#3dbb61;
+    left:46px;
+    top:95px;
+    border-radius:10px;
+}
+
+.leaf{
+    position:absolute;
+    width:55px;
+    height:25px;
+    background:#3dbb61;
+    border-radius:100% 0;
+}
+
+.leaf.one{
+    left:0;
+    top:150px;
+    transform:rotate(-25deg);
+}
+
+.leaf.two{
+    right:-5px;
+    top:185px;
+    transform:rotate(25deg);
+}
+
+@keyframes roseAppear{
+    from{
+        transform:scale(0) translateY(100px);
+        opacity:0;
+    }
+    to{
+        transform:scale(1) translateY(0);
+        opacity:1;
+    }
+}
+
+/* PROPOSAL */
+
+.proposalCard{
+    padding:45px 30px;
+    border-radius:30px;
+    background:rgba(255,255,255,.07);
+    box-shadow:0 0 40px rgba(255,40,90,.3);
+}
+
+.proposalHeart{
+    font-size:100px;
+    animation:heartbeat 1s infinite;
+}
+
+.choice{
+    padding:15px 35px;
+    margin:15px;
+    border:none;
+    border-radius:30px;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.yesBtn{
+    background:#ff2760;
+    box-shadow:0 0 20px #ff2760;
+}
+
+.sorryBtn{
+    background:#555;
+}
+
+/* FINAL */
+
+.finalHeart{
+    font-size:130px;
+    animation:heartbeat .8s infinite;
+}
+
+.finalTitle{
+    font-size:55px;
+    color:#ff4c79;
+    text-shadow:0 0 25px #ff174f;
+}
+
+.sadHeart{
+    font-size:120px;
+    animation:slowBeat 2.5s infinite;
+}
+
+@keyframes slowBeat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.12)}
+}
+
+.floating{
+    position:fixed;
+    bottom:-50px;
+    font-size:30px;
+    animation:floatUp 5s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+
+.small{
+    font-size:15px;
+    color:#bbb;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    h1{
+        font-size:35px;
+    }
+
+    h2{
+        font-size:27px;
+    }
+
+    p{
+        font-size:17px;
+    }
+
+    .introName{
+        font-size:40px;
+    }
+
+    .boxGrid{
+        grid-template-columns:repeat(2,1fr);
+        max-width:350px;
+    }
+
+    .memoryGrid{
+        grid-template-columns:repeat(4,65px);
+        gap:8px;
+    }
+
+    .memoryCard{
+        height:65px;
+    }
+
+    .heartTalk{
+        padding:25px;
+    }
+
+    .heartTalk p{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+
+<audio id="song" loop>
+    <source src="kuchbatein.mp4.mp4" type="audio/mp4">
+</audio>
+
+
+<!-- INTRO -->
+
+<section id="intro" class="screen active">
+<div class="container">
+
+    <div class="introTitle">A LITTLE JOURNEY CREATED BY</div>
+
+    <div class="introName">
+        AKHIL RAJ SINGH
+    </div>
+
+    <p class="introInfo">
+        From Siwan, Bihar 🇮🇳
+        <br><br>
+        <b>JEE Mains Qualified</b>
+        <br>
+        IIT Madras
+        <br>
+        BS in Data Science and Applications
+    </p>
+
+    <p class="small">
+        Building dreams, one step at a time...
+        <br><br>
+        And today, I created a little journey specially
+        for someone special. ❤️
+    </p>
+
+    <button class="mainBtn" onclick="startJourney()">
+        Start The Journey ✨
+    </button>
+
+</div>
+</section>
+
+
+<!-- GAME 1 -->
+
+<section id="game1" class="screen">
+<div class="container">
+
+    <h2 class="gameTitle">❤️ Catch My Heart</h2>
+
+    <p>
+        My heart keeps hiding...
+        <br>
+        Can you find it?
+    </p>
+
+    <div id="heartArea" class="playArea"></div>
+
+</div>
+</section>
+
+
+<!-- GAME 2 -->
+
+<section id="game2" class="screen">
+<div class="container">
+
+    <h2 class="gameTitle">🌹 Find The Rose</h2>
+
+    <p>
+        There is one rose hidden in these 10 boxes.
+        <br>
+        Select a box and find it! ❤️
+    </p>
+
+    <div id="boxGrid" class="boxGrid"></div>
+
+</div>
+</section>
+
+
+<!-- GAME 3 -->
+
+<section id="game3" class="screen">
+<div class="container">
+
+    <h2 class="gameTitle">💖 Catch The Love</h2>
+
+    <p>
+        Catch 10 hearts before they disappear! ❤️
+    </p>
+
+    <p id="score">
+        Hearts caught: 0 / 10
+    </p>
+
+    <div id="fallArea" class="playArea"></div>
+
+</div>
+</section>
+
+
+<!-- GAME 4 -->
+
+<section id="game4" class="screen">
+<div class="container">
+
+    <h2 class="gameTitle">💕 Match The Hearts</h2>
+
+    <p>
+        Find all the matching pairs ❤️
+    </p>
+
+    <div id="memoryGrid" class="memoryGrid"></div>
+
+</div>
+</section>
+
+
+<!-- DIL KI BAAT -->
+
+<section id="heartTalk" class="screen">
+<div class="container">
+
+    <div class="heartTalk">
+
+        <h2>💌 A Little Something From My Heart</h2>
+
+        <br>
+
+        <p>
+            <b>Hi riya… ❤️</b>
+            <br><br>
+
+            My name is <span class="highlight">Akhil Raj Singh</span>.
+            I completed my 12th in 2026 and I have also qualified
+            <b>JEE Mains.</b>
+            <br><br>
+
+            Right now, I am studying
+            <b>BS in Data Science and Applications at IIT Madras.</b>
+            I am going to stay on this journey for at least the next 4 years.
+            <br><br>
+
+            <b>From the first day I saw you, I don't know what happened to me.</b>
+            Somehow, I started feeling something different for you.
+            <br><br>
+
+            And I'm sorry…
+            Sometimes I secretly look at you.
+            Maybe you don't like it, and if it ever made you uncomfortable,
+            <b>I'm really sorry.</b>
+            <br><br>
+
+            I have tried many times not to look at you,
+            but honestly, sometimes I just can't control it.
+            <br><br>
+
+            By now, you probably already know that
+            <b>something has happened to me… I have started liking you. ❤️</b>
+            <br><br>
+
+            I have been working on this website for the last
+            <b>3 days.</b>
+            This is actually my <b>first time making a website</b>
+            and my first proper project.
+            <br><br>
+
+            So if this website is not perfect,
+            <b>I'm sorry.</b>
+            But I have worked really hard on it.
+            <br><br>
+
+            I spent almost <b>40 hours</b> making this little website.
+            I am learning software engineering, so I thought…
+            <br><br>
+
+            <b>Why not use software to express my feelings? ❤️</b>
+            <br><br>
+
+            I don't know if you will like this website or not,
+            but I made it with a lot of effort and honestly,
+            <b>with my heart.</b>
+            <br><br>
+
+            And after all this…
+            <br><br>
+
+            I just have <b>one question</b> for you. ❤️
+        </p>
+
+        <button class="mainBtn" onclick="goGift()">
+            Continue ❤️
+        </button>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- LOVE MOMENT -->
+
+<section id="loveMoment" class="screen">
+<div class="container">
+
+    <div class="loveHeart">❤️</div>
+
+    <h2>One Last Little Moment...</h2>
+
+    <p>
+        Some people become memories...
+        <br>
+        Some become special memories...
+        <br>
+        And sometimes...
+        <br>
+        one person becomes the reason behind a smile. ❤️
+    </p>
+
+    <button class="mainBtn" onclick="openGiftScreen()">
+        Continue 💌
+    </button>
+
+</div>
+</section>
+
+
+<!-- GIFT -->
+
+<section id="giftScreen" class="screen">
+<div class="container">
+
+    <h2>A Little Gift For You 🎁</h2>
+
+    <p>
+        There is something waiting inside...
+    </p>
+
+    <div id="gift" class="gift" onclick="openGift()">
+
+        <div class="giftLid"></div>
+        <div class="giftBody"></div>
+
+    </div>
+
+    <p class="small">
+        Click the gift 🎁
+    </p>
+
+</div>
+</section>
+
+
+<!-- ROSE -->
+
+<section id="roseScreen" class="screen">
+<div class="container">
+
+    <h2>For You, riya 🌹</h2>
+
+    <div class="rose">
+
+        <div class="roseFlower">🌹</div>
+
+        <div class="stem"></div>
+
+        <div class="leaf one"></div>
+        <div class="leaf two"></div>
+
+    </div>
+
+    <p>
+        A rose for someone special. ❤️
+    </p>
+
+    <button class="mainBtn" onclick="showProposal()">
+        One Last Thing... ❤️
+    </button>
+
+</div>
+</section>
+
+
+<!-- PROPOSAL -->
+
+<section id="proposal" class="screen">
+<div class="container">
+
+    <div class="proposalCard">
+
+        <div class="proposalHeart">❤️</div>
+
+        <h1>riya...</h1>
+
+        <p>
+            This whole little journey...
+            <br>
+            every game, every animation,
+            every little detail...
+            <br><br>
+
+            was created just to reach
+            <br>
+            this one moment.
+        </p>
+
+        <br>
+
+        <h2>
+            Will you accept my proposal? 🌹
+        </h2>
+
+        <button class="choice yesBtn" onclick="sayYes()">
+            YES ❤️
+        </button>
+
+        <button class="choice sorryBtn" onclick="saySorry()">
+            SORRY 💔
+        </button>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- YES -->
+
+<section id="yesScreen" class="screen">
+<div class="container">
+
+    <div class="finalHeart">❤️</div>
+
+    <div class="finalTitle">
+        I LOVE YOU riya
+    </div>
+
+    <p>
+        You just made this little journey
+        <br>
+        worth making.
+        <br><br>
+        Just for you. ❤️
+    </p>
+
+</div>
+</section>
+
+
+<!-- SORRY -->
+
+<section id="sorryScreen" class="screen">
+<div class="container">
+
+    <div class="sadHeart">💔</div>
+
+    <h1>It's Okay, riya...</h1>
+
+    <p>
+        Maybe this wasn't the ending
+        I was hoping for.
+        <br><br>
+        But thank you for being a part
+        of this little journey. ❤️
+    </p>
+
+</div>
+</section>
+
+
+<script>
+
+const song = document.getElementById("song");
+
+
+/* SCREEN CHANGE */
+
+function showScreen(id){
+
+    document.querySelectorAll(".screen").forEach(screen=>{
+        screen.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+}
+
+
+/* MUSIC */
+
+function startMusic(){
+
+    song.volume = 0.7;
+
+    song.play().catch(()=>{
+        console.log("Music needs user interaction.");
+    });
+}
+
+
+/* START */
+
+function startJourney(){
+
+    startMusic();
+
+    showScreen("game1");
+
+    startHiddenHeart();
+}
+
+
+/* GAME 1 */
+
+function startHiddenHeart(){
+
+    const area = document.getElementById("heartArea");
+
+    area.innerHTML = "";
+
+    const heart = document.createElement("div");
+
+    heart.className = "hiddenHeart";
+    heart.innerHTML = "❤️";
+
+    area.appendChild(heart);
+
+    function moveHeart(){
+
+        const maxX = area.clientWidth - 70;
+        const maxY = area.clientHeight - 70;
+
+        heart.style.left =
+            Math.random() * maxX + "px";
+
+        heart.style.top =
+            Math.random() * maxY + "px";
+
+        heart.style.opacity = "1";
+
+        setTimeout(()=>{
+
+            heart.style.opacity = "0";
+
+        },1100);
+
+        setTimeout(()=>{
+
+            if(document.getElementById("game1").classList.contains("active")){
+                moveHeart();
+            }
+
+        },1500);
+    }
+
+    heart.onclick = ()=>{
+
+        showScreen("game2");
+
+        startRoseBoxes();
+    };
+
+    moveHeart();
+}
+
+
+/* GAME 2 */
+
+function startRoseBoxes(){
+
+    const grid = document.getElementById("boxGrid");
+
+    grid.innerHTML = "";
+
+    const rosePosition =
+        Math.floor(Math.random() * 10);
+
+    for(let i=0;i<10;i++){
+
+        const box = document.createElement("button");
+
+        box.className = "mysteryBox";
+
+        box.innerHTML = "🎁";
+
+        box.onclick = function(){
+
+            if(i === rosePosition){
+
+                box.innerHTML = "🌹";
+
+                box.style.background =
+                    "linear-gradient(145deg,#ff4774,#ff174f)";
+
+                setTimeout(()=>{
+
+                    showScreen("game3");
+
+                    startFallingHearts();
+
+                },900);
+
+            }
+
+            else{
+
+                box.innerHTML = "💔";
+                box.style.opacity = ".5";
+                box.disabled = true;
+
+            }
+
+        };
+
+        grid.appendChild(box);
+    }
+}
+
+
+/* GAME 3 */
+
+let caught = 0;
+let heartInterval;
+
+function startFallingHearts(){
+
+    caught = 0;
+
+    document.getElementById("score").innerText =
+        "Hearts caught: 0 / 10";
+
+    const area = document.getElementById("fallArea");
+
+    area.innerHTML = "";
+
+    clearInterval(heartInterval);
+
+    heartInterval = setInterval(()=>{
+
+        createFallingHeart();
+
+    },650);
+}
+
+
+function createFallingHeart(){
+
+    const area = document.getElementById("fallArea");
+
+    const heart = document.createElement("div");
+
+    heart.className = "fallingHeart";
+
+    const hearts = ["❤️","💖","💕","💗"];
+
+    heart.innerHTML =
+        hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left =
+        Math.random() * (area.clientWidth - 40) + "px";
+
+    heart.style.animationDuration =
+        (2 + Math.random()*2) + "s";
+
+    area.appendChild(heart);
+
+    heart.onclick = ()=>{
+
+        caught++;
+
+        heart.remove();
+
+        document.getElementById("score").innerText =
+            "Hearts caught: " + caught + " / 10";
+
+        if(caught >= 10){
+
+            clearInterval(heartInterval);
+
+            setTimeout(()=>{
+
+                showScreen("game4");
+
+                startMemory();
+
+            },500);
+        }
+    };
+
+    setTimeout(()=>{
+
+        if(heart.parentElement){
+            heart.remove();
+        }
+
+    },4500);
+}
+
+
+/* GAME 4 */
+
+const symbols = [
+    "❤️","❤️",
+    "💕","💕",
+    "🌹","🌹",
+    "💖","💖"
+];
+
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+let matchedPairs = 0;
+
+
+function startMemory(){
+
+    const grid =
+        document.getElementById("memoryGrid");
+
+    grid.innerHTML = "";
+
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+    matchedPairs = 0;
+
+    const shuffled =
+        [...symbols].sort(()=>Math.random()-.5);
+
+    shuffled.forEach(symbol=>{
+
+        const card =
+            document.createElement("div");
+
+        card.className = "memoryCard";
+
+        card.dataset.symbol = symbol;
+
+        card.innerHTML = symbol;
+
+        card.onclick = ()=>flipCard(card);
+
+        grid.appendChild(card);
+    });
+}
+
+
+function flipCard(card){
+
+    if(lockBoard) return;
+
+    if(card.classList.contains("flipped")) return;
+
+    if(card.classList.contains("matched")) return;
+
+    card.classList.add("flipped");
+
+    if(!firstCard){
+
+        firstCard = card;
+        return;
+    }
+
+    secondCard = card;
+
+    if(firstCard.dataset.symbol ===
+       secondCard.dataset.symbol){
+
+        firstCard.classList.add("matched");
+        secondCard.classList.add("matched");
+
+        matchedPairs++;
+
+        firstCard = null;
+        secondCard = null;
+
+        if(matchedPairs === 4){
+
+            setTimeout(()=>{
+
+                showScreen("heartTalk");
+
+            },1000);
+        }
+
+    }else{
+
+        lockBoard = true;
+
+        setTimeout(()=>{
+
+            firstCard.classList.remove("flipped");
+            secondCard.classList.remove("flipped");
+
+            firstCard = null;
+            secondCard = null;
+
+            lockBoard = false;
+
+        },800);
+    }
+}
+
+
+/* DIL KI BAAT -> LOVE MOMENT */
+
+function goGift(){
+
+    showScreen("loveMoment");
+
+}
+
+
+/* LOVE MOMENT -> GIFT */
+
+function openGiftScreen(){
+
+    showScreen("giftScreen");
+
+}
+
+
+/* GIFT */
+
+function openGift(){
+
+    const gift =
+        document.getElementById("gift");
+
+    gift.classList.add("open");
+
+    setTimeout(()=>{
+
+        showScreen("roseScreen");
+
+    },1000);
+}
+
+
+/* ROSE -> PROPOSAL */
+
+function showProposal(){
+
+    showScreen("proposal");
+
+}
+
+
+/* YES */
+
+function sayYes(){
+
+    showScreen("yesScreen");
+
+    song.play().catch(()=>{});
+
+    createFloating(35);
+
+}
+
+
+/* SORRY */
+
+function saySorry(){
+
+    showScreen("sorryScreen");
+
+    createFloating(10);
+
+}
+
+
+/* FLOATING HEARTS */
+
+function createFloating(amount){
+
+    for(let i=0;i<amount;i++){
+
+        setTimeout(()=>{
+
+            const element =
+                document.createElement("div");
+
+            element.className = "floating";
+
+            const things =
+                ["❤️","💖","💕","🌹","✨"];
+
+            element.innerHTML =
+                things[Math.floor(Math.random()*things.length)];
+
+            element.style.left =
+                Math.random()*100 + "vw";
+
+            element.style.animationDuration =
+                (3 + Math.random()*4) + "s";
+
+            document.body.appendChild(element);
+
+            setTimeout(()=>{
+
+                element.remove();
+
+            },7000);
+
+        },i*150);
+
+    }
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - JanDarpan</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <div class="admin-page">
+
+        <header class="admin-header">
+            <div>
+                <h1>JanDarpan Admin</h1>
+                <p>Admin Dashboard</p>
+            </div>
+
+            <button id="logoutButton">
+                Logout
+            </button>
+        </header>
+
+
+        <main class="admin-content">
+
+            <!-- STATISTICS -->
+
+            <section class="stats">
+
+                <div class="stat-card">
+                    <span>👥</span>
+                    <p>Total Users</p>
+                    <strong id="totalUsers">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>📋</span>
+                    <p>Total Reports</p>
+                    <strong id="totalReports">0</strong>
+                </div>
+
+            </section>
+
+
+            <!-- USERS -->
+
+            <section class="users-section">
+
+                <div class="section-heading">
+                    <h2>Registered Users</h2>
+                    <p>Users who have created an account on JanDarpan.</p>
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                                <th>Role</th>
+                                <th>Created</th>
+                                <th>Last Login</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="usersTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

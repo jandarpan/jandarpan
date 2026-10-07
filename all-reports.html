@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Reports - JanDarpan</title>
+
+    <link rel="stylesheet" href="all-reports.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <a href="dashboard.html" class="logo">
+        <span>Jan</span>Darpan
+    </a>
+
+    <a href="dashboard.html" class="back-btn">
+        ← Dashboard
+    </a>
+
+</header>
+
+
+<main class="reports-page">
+
+    <section class="page-heading">
+
+        <p class="small-title">
+            ALL REPORTS
+        </p>
+
+        <h1>
+            Public <span>Reports</span>
+        </h1>
+
+        <p>
+            View infrastructure problems reported across Bihar.
+        </p>
+
+    </section>
+
+
+    <!-- AREA FILTER -->
+
+    <section class="filter-card">
+
+        <h2>
+            Select Area
+        </h2>
+
+        <p>
+            Choose an area to see reports from that location.
+        </p>
+
+
+        <div class="filter-grid">
+
+            <div class="filter-group">
+
+                <label for="district">
+                    District
+                </label>
+
+                <select id="district">
+
+                    <option value="all">
+                        All Districts
+                    </option>
+
+                    <option>Araria</option>
+                    <option>Arwal</option>
+                    <option>Aurangabad</option>
+                    <option>Banka</option>
+                    <option>Begusarai</option>
+                    <option>Bhagalpur</option>
+                    <option>Bhojpur</option>
+                    <option>Buxar</option>
+                    <option>Darbhanga</option>
+                    <option>East Champaran</option>
+                    <option>Gaya</option>
+                    <option>Gopalganj</option>
+                    <option>Jamui</option>
+                    <option>Jehanabad</option>
+                    <option>Kaimur</option>
+                    <option>Katihar</option>
+                    <option>Khagaria</option>
+                    <option>Kishanganj</option>
+                    <option>Lakhisarai</option>
+                    <option>Madhepura</option>
+                    <option>Madhubani</option>
+                    <option>Munger</option>
+                    <option>Muzaffarpur</option>
+                    <option>Nalanda</option>
+                    <option>Nawada</option>
+                    <option>Patna</option>
+                    <option>Purnia</option>
+                    <option>Rohtas</option>
+                    <option>Saharsa</option>
+                    <option>Samastipur</option>
+                    <option>Saran</option>
+                    <option>Sheikhpura</option>
+                    <option>Sheohar</option>
+                    <option>Sitamarhi</option>
+                    <option>Siwan</option>
+                    <option>Supaul</option>
+                    <option>Vaishali</option>
+                    <option>West Champaran</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label for="assembly">
+                    Assembly Constituency
+                </label>
+
+                <select id="assembly">
+
+                    <option value="all">
+                        All Constituencies
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label for="block">
+                    Block
+                </label>
+
+                <select id="block">
+
+                    <option value="all">
+                        All Blocks
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label for="village">
+                    Village
+                </label>
+
+                <select id="village">
+
+                    <option value="all">
+                        All Villages
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REPORT SUMMARY -->
+
+    <section class="summary">
+
+        <div class="summary-card">
+
+            <span>📋</span>
+
+            <div>
+                <small>Total Reports</small>
+                <strong>0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>🔄</span>
+
+            <div>
+                <small>In Progress</small>
+                <strong>0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>✅</span>
+
+            <div>
+                <small>Resolved</small>
+                <strong>0</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REPORTS -->
+
+    <section class="reports-section">
+
+        <div class="section-heading">
+
+            <h2>
+                Reports
+            </h2>
+
+            <p>
+                Problems reported by citizens.
+            </p>
+
+        </div>
+
+
+        <div id="reportsList" class="reports-list">
+
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    📍
+                </div>
+
+                <h3>
+                    No reports found
+                </h3>
+
+                <p>
+                    Reports from the selected area will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="all-reports.js"></script>
+</body>
+
+</html>

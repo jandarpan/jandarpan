@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report a Problem - JanDarpan</title>
+
+    <link rel="stylesheet" href="report.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+        <a href="dashboard.html" class="logo">
+            <span>Jan</span>Darpan
+        </a>
+
+        <a href="dashboard.html" class="back-btn">
+            ← Back
+        </a>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="report-page">
+
+        <!-- HEADING -->
+        <section class="report-heading">
+
+            <p class="small-title">
+                REPORT AN ISSUE
+            </p>
+
+            <h1>
+                Help improve your <span>area.</span>
+            </h1>
+
+            <p>
+                Tell us about the problem and help bring
+                attention to issues in your community.
+            </p>
+
+        </section>
+
+
+        <!-- REPORT FORM -->
+        <section class="report-card">
+
+            <form id="reportForm">
+
+                <!-- CATEGORY -->
+                <div class="form-group">
+
+    <label for="reportDistrict">
+        District
+    </label>
+
+    <select id="reportDistrict" required>
+
+        <option value="all">
+            Select District
+        </option>
+
+        <option>Araria</option>
+        <option>Arwal</option>
+        <option>Aurangabad</option>
+        <option>Banka</option>
+        <option>Begusarai</option>
+        <option>Bhagalpur</option>
+        <option>Bhojpur</option>
+        <option>Buxar</option>
+        <option>Darbhanga</option>
+        <option>East Champaran</option>
+        <option>Gaya</option>
+        <option>Gopalganj</option>
+        <option>Jamui</option>
+        <option>Jehanabad</option>
+        <option>Kaimur</option>
+        <option>Katihar</option>
+        <option>Khagaria</option>
+        <option>Kishanganj</option>
+        <option>Lakhisarai</option>
+        <option>Madhepura</option>
+        <option>Madhubani</option>
+        <option>Munger</option>
+        <option>Muzaffarpur</option>
+        <option>Nalanda</option>
+        <option>Nawada</option>
+        <option>Patna</option>
+        <option>Purnia</option>
+        <option>Rohtas</option>
+        <option>Saharsa</option>
+        <option>Samastipur</option>
+        <option>Saran</option>
+        <option>Sheikhpura</option>
+        <option>Sheohar</option>
+        <option>Sitamarhi</option>
+        <option>Siwan</option>
+        <option>Supaul</option>
+        <option>Vaishali</option>
+        <option>West Champaran</option>
+
+    </select>
+
+</div>
+
+
+<div class="form-group">
+
+    <label for="reportAssembly">
+        Assembly Constituency
+    </label>
+
+    <select id="reportAssembly" required>
+
+        <option value="all">
+            Select Assembly
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="form-group">
+
+    <label for="reportBlock">
+        Block
+    </label>
+
+    <select id="reportBlock" required>
+
+        <option value="all">
+            Select Block
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="form-group">
+
+    <label for="reportVillage">
+        Village
+    </label>
+
+    <select id="reportVillage" required>
+
+        <option value="all">
+            Select Village
+        </option>
+
+    </select>
+
+</div>
+                <div class="form-group">
+
+                    <label>
+                        What is the problem?
+                    </label>
+
+                    <div class="category-options">
+
+                        <button type="button"
+                                class="category-option"
+                                data-category="Road">
+
+                            <span>🛣️</span>
+                            Road
+
+                        </button>
+
+
+                        <button type="button"
+                                class="category-option"
+                                data-category="Nala">
+
+                            <span>🚧</span>
+                            Nala
+
+                        </button>
+
+
+                        <button type="button"
+                                class="category-option"
+                                data-category="Hospital">
+
+                            <span>🏥</span>
+                            Hospital
+
+                        </button>
+
+
+                        <button type="button"
+                                class="category-option"
+                                data-category="School">
+
+                            <span>🏫</span>
+                            School
+
+                        </button>
+
+
+                        <button type="button"
+                                class="category-option"
+                                data-category="Other">
+
+                            <span>➕</span>
+                            Other
+
+                        </button>
+
+                    </div>
+
+                    <input
+                        type="hidden"
+                        id="category"
+                        name="category"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PHOTO -->
+                <div class="form-group">
+
+                    <label for="photo">
+                        Add a Photo
+                    </label>
+
+                    <div class="photo-upload">
+
+                        <input
+                            type="file"
+                            id="photo"
+                            accept="image/*"
+                        >
+
+                        <div class="upload-content">
+
+                            <div class="upload-icon">
+                                📷
+                            </div>
+
+                            <h3>
+                                Upload a photo
+                            </h3>
+
+                            <p>
+                                Take a photo or choose one
+                                from your device.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROBLEM TITLE -->
+                <div class="form-group">
+
+                    <label for="problem">
+                        Problem
+                    </label>
+
+                    <input
+                        type="text"
+                        id="problem"
+                        placeholder="Example: Large pothole near main road"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+                <div class="form-group">
+
+                    <label for="description">
+                        Describe the problem
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="5"
+                        placeholder="Tell us what is wrong..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- LOCATION -->
+                <div class="form-group">
+
+                    <label>
+                        Location
+                    </label>
+
+                    <div class="location-box">
+
+                        <div class="location-icon">
+                            📍
+                        </div>
+
+                        <div class="location-details">
+
+                            <strong id="locationArea">
+                                Your selected area
+                            </strong>
+
+                            <p id="locationState">
+                                Bihar
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="locationButton"
+                            class="location-button"
+                        >
+                            Use Location
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Submit Report
+                    <span>→</span>
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="report.js"></script>
+
+</body>
+
+</html>

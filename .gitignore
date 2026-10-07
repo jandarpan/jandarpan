@@ -1,0 +1,5 @@
+jandarpan.db
+.idea/
+.venv/
+create_admin.py
+__pycache__/

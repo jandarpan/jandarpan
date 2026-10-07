@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Reports - JanDarpan</title>
+
+    <link rel="stylesheet" href="your-reports.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+        <a href="dashboard.html" class="logo">
+            <span>Jan</span>Darpan
+        </a>
+
+        <a href="dashboard.html" class="back-btn">
+            ← Dashboard
+        </a>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="reports-page">
+
+        <section class="page-heading">
+
+            <p class="small-title">
+                YOUR REPORTS
+            </p>
+
+            <h1>
+                Reports you've <span>submitted.</span>
+            </h1>
+
+            <p>
+                View and manage the problems you have reported.
+            </p>
+
+        </section>
+
+
+        <!-- FILTER TABS -->
+        <div class="report-tabs">
+
+            <button class="report-tab active" data-status="All">
+                📋 Total
+            </button>
+
+            <button class="report-tab" data-status="In Progress">
+                🔄 In Progress
+            </button>
+
+            <button class="report-tab" data-status="Resolved">
+                ✅ Resolved
+            </button>
+
+            <button class="report-tab" data-status="Unresolved">
+                ⚠️ Unresolved
+            </button>
+
+        </div>
+
+
+        <!-- REPORT LIST -->
+        <section id="reportsList" class="reports-list">
+
+            <!-- Reports will appear here -->
+
+        </section>
+
+
+        <!-- EMPTY MESSAGE -->
+        <section id="emptyMessage" class="empty-message">
+
+            <div class="empty-icon">
+                📋
+            </div>
+
+            <h2>
+                No reports found
+            </h2>
+
+            <p>
+                You haven't submitted any reports in this section yet.
+            </p>
+
+            <a href="report.html">
+                Report a Problem
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <script src="your-reports.js"></script>
+
+</body>
+
+</html>
