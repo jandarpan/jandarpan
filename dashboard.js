@@ -8,7 +8,7 @@ const assembly = localStorage.getItem("selectedAssembly");
 
 
 // ===============================
-// SHOW AREA
+// SHOW SELECTED AREA
 // ===============================
 
 const areaTitle = document.getElementById("areaTitle");
@@ -16,6 +16,8 @@ const stateTitle = document.getElementById("stateTitle");
 
 if (district && assembly) {
     areaTitle.textContent = `${assembly}, ${district}`;
+} else if (district) {
+    areaTitle.textContent = district;
 }
 
 if (state) {
@@ -24,7 +26,7 @@ if (state) {
 
 
 // ===============================
-// LOAD SAVED REPORTS
+// LOAD REPORTS
 // ===============================
 
 let reports = JSON.parse(
@@ -52,10 +54,11 @@ const unresolvedReports = reports.filter(function (report) {
 
 
 // ===============================
-// UPDATE DASHBOARD COUNTS
+// UPDATE OVERVIEW
 // ===============================
 
-const overviewCards = document.querySelectorAll(".overview-card");
+const overviewCards =
+    document.querySelectorAll(".overview-card");
 
 if (overviewCards.length >= 4) {
 
@@ -74,10 +77,90 @@ if (overviewCards.length >= 4) {
 
 
 // ===============================
+// RECENT REPORTS
+// ===============================
+
+const reportsSection =
+    document.querySelector(".reports-section");
+
+const emptyReports =
+    document.querySelector(".empty-reports");
+
+
+// Remove old report cards if any
+const oldReportCards =
+    document.querySelectorAll(".recent-report-card");
+
+oldReportCards.forEach(function (card) {
+    card.remove();
+});
+
+
+if (reports.length > 0) {
+
+    // Hide empty message
+    if (emptyReports) {
+        emptyReports.style.display = "none";
+    }
+
+    // Show latest 5 reports
+    const recentReports = reports.slice(-5).reverse();
+
+    recentReports.forEach(function (report) {
+
+        const card = document.createElement("div");
+
+        card.className = "recent-report-card";
+
+        const category =
+            report.category || "Other";
+
+        const problem =
+            report.problem || "Civic problem";
+
+        const status =
+            report.status || "Unresolved";
+
+        const village =
+            report.village || "Area not specified";
+
+        card.innerHTML = `
+            <div class="recent-report-icon">
+                📍
+            </div>
+
+            <div class="recent-report-content">
+
+                <h3>
+                    ${problem}
+                </h3>
+
+                <p>
+                    ${category} • ${village}
+                </p>
+
+                <span class="report-status ${status
+                    .toLowerCase()
+                    .replace(" ", "-")}">
+                    ${status}
+                </span>
+
+            </div>
+        `;
+
+        reportsSection.appendChild(card);
+
+    });
+
+}
+
+
+// ===============================
 // CATEGORY LINKS
 // ===============================
 
-const categoryLinks = document.querySelectorAll(".category-card");
+const categoryLinks =
+    document.querySelectorAll(".category-card");
 
 categoryLinks.forEach(function (card) {
 
@@ -95,37 +178,17 @@ categoryLinks.forEach(function (card) {
 
 
 // ===============================
-// BOTTOM NAVIGATION
-// ===============================
-
-const navItems = document.querySelectorAll(".nav-item");
-
-navItems.forEach(function (item) {
-
-    item.addEventListener("click", function () {
-
-        navItems.forEach(function (nav) {
-            nav.classList.remove("active");
-        });
-
-        item.classList.add("active");
-
-    });
-
-});
-
-
-// ===============================
 // VIEW ALL
 // ===============================
 
-const viewAllButton = document.querySelector(".view-all");
+const viewAllButton =
+    document.querySelector(".view-all");
 
 if (viewAllButton) {
 
     viewAllButton.addEventListener("click", function () {
 
-        alert("All reports section will be available soon.");
+        window.location.href = "all-reports.html";
 
     });
 
@@ -136,7 +199,8 @@ if (viewAllButton) {
 // PROFILE
 // ===============================
 
-const profileButton = document.querySelector(".profile-btn");
+const profileButton =
+    document.querySelector(".profile-btn");
 
 if (profileButton) {
 
@@ -153,13 +217,24 @@ if (profileButton) {
 // NOTIFICATIONS
 // ===============================
 
-const notificationButton = document.querySelector(".icon-btn");
+const notificationButton =
+    document.querySelector(".icon-btn");
 
 if (notificationButton) {
 
     notificationButton.addEventListener("click", function () {
 
-        alert("No new notifications.");
+        if (reports.length === 0) {
+
+            alert("No new notifications.");
+
+        } else {
+
+            alert(
+                `You have ${reports.length} report(s) in your area.`
+            );
+
+        }
 
     });
 
