@@ -42,6 +42,9 @@ def init_db():
     connection.close()
 
 
+init_db()
+
+
 # ---------------- SIGNUP ----------------
 
 @app.route("/api/signup", methods=["POST"])
